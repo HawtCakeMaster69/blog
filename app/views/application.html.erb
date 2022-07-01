@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>B</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+  </head>
+
+  <body>
+
+    <%= link_to 'Всестьи', posts_path %>
+    |
+    <%= link_to 'Новая статья', new_post_path %>
+
+    <div class="container main">
+      <div class="row">
+        <div class="col-md-12"
+        <% flash.each do |name, message| %>
+          <div class="alert alert-<%= name %>">
+            <%= message %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+      <%= yield %>
+    </div>
+  </body>
+</html>
